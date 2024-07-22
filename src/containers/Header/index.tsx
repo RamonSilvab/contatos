@@ -1,6 +1,6 @@
 import Titulo from './styles'
 
-const ListaDeContatos = () => {
+const Header = () => {
   return (
     <Titulo>
       <img
@@ -12,4 +12,4 @@ const ListaDeContatos = () => {
   )
 }
 
-export default ListaDeContatos
+export default Header
