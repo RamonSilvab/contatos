@@ -18,6 +18,7 @@ export const Card = styled.div`
 
   p {
     font-size: 14px;
+    font-weight: bold;
   }
 
   @media (max-width: 567px) {
