@@ -1,15 +1,32 @@
-import { Botao } from '../../styles'
-import { BotaoCancelarRemover, Card } from './styles'
+import Contato from '../../components/Contato'
+
+const contatos = [
+  {
+    nome: 'Ramon',
+    email: 'ramonsilvab05@gmail.com',
+    telefone: 28992727751
+  },
+  {
+    nome: 'Bruna',
+    email: 'brunavalims2@gmail.com',
+    telefone: 28992725559
+  },
+  {
+    nome: 'Norky',
+    email: 'norkyzinho@gmail.com',
+    telefone: 28992727553
+  }
+]
 
 const ListaDeContatos = () => {
   return (
-    <Card>
-      <h3>Ramon</h3>
-      <p>ramonsilvab05@gmail.com</p>
-      <p>28 99272-7751</p>
-      <Botao>Editar</Botao>
-      <BotaoCancelarRemover>Excluir</BotaoCancelarRemover>
-    </Card>
+    <ul>
+      {contatos.map((c) => (
+        <li key={c.nome}>
+          <Contato nome={c.nome} email={c.email} telefone={c.telefone} />
+        </li>
+      ))}
+    </ul>
   )
 }
 

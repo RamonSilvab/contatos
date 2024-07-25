@@ -9,6 +9,7 @@ export const Card = styled.div`
   border: 1px solid black;
   border-radius: 16px;
   margin: 24px auto 24px;
+  box-shadow: 1px 1px 2px solid black;
 
   h3,
   p {
@@ -27,4 +28,7 @@ export const Card = styled.div`
 `
 export const BotaoCancelarRemover = styled(Botao)`
   background-color: ${variaveis.vermelho};
+`
+export const BotaoEditar = styled(Botao)`
+  background-color: ${variaveis.azulEscuro};
 `
