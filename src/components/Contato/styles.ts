@@ -6,10 +6,9 @@ export const Card = styled.div`
   max-width: 50%;
   background-color: #fcfcfc;
   padding: 16px;
-  border: 1px solid black;
   border-radius: 16px;
   margin: 24px auto 24px;
-  box-shadow: 1px 1px 2px solid black;
+  box-shadow: 4px 4px 8px #00000061;
 
   h3,
   p {
