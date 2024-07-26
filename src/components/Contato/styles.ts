@@ -3,6 +3,8 @@ import variaveis from '../../styles/variaveis'
 import { Botao } from '../../styles'
 
 export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
   max-width: 50%;
   background-color: #fcfcfc;
   padding: 16px;
@@ -19,6 +21,17 @@ export const Card = styled.div`
   p {
     font-size: 14px;
     font-weight: bold;
+  }
+
+  div {
+    background-color: #fcfcfc;
+  }
+
+  input {
+    margin-bottom: 8px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 8px;
   }
 
   @media (max-width: 567px) {

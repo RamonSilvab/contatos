@@ -1,38 +1,101 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { Botao } from '../../styles'
 import { BotaoCancelarRemover, BotaoEditar, Card } from './styles'
 
-import { remover } from '../../store/reducers/contatos'
+import { remover, editar } from '../../store/reducers/contatos'
 import ContatoClass from '../../models/Contato'
 
 type Props = ContatoClass
 
-const Contato = ({ nome, email, telefone, id }: Props) => {
+const Contato = ({
+  nome: nomeOriginal,
+  email: emailOriginal,
+  telefone: telefoneOriginal,
+  id
+}: Props) => {
   const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
+  const [editarNome, setEditarNome] = useState('')
+  const [editarEmail, setEditarEmail] = useState('')
+  const [editarTelefone, setEditarTelefone] = useState('')
+
+  useEffect(() => {
+    if (nomeOriginal.length > 0) {
+      setEditarNome(nomeOriginal)
+      setEditarEmail(emailOriginal)
+      setEditarTelefone(telefoneOriginal)
+    }
+  }, [nomeOriginal, emailOriginal, telefoneOriginal])
+
+  function cancelarEdicao() {
+    setEstaEditando(false)
+    setEditarNome(nomeOriginal)
+    setEditarEmail(emailOriginal)
+    setEditarTelefone(telefoneOriginal)
+  }
 
   return (
     <Card>
-      <h3>{nome}</h3>
-      <p>{email}</p>
-      <p>{telefone}</p>
       {estaEditando ? (
         <>
-          <Botao>Salvar</Botao>
-          <BotaoCancelarRemover onClick={() => setEstaEditando(false)}>
-            Cancelar
-          </BotaoCancelarRemover>
+          <input
+            type="text"
+            placeholder={nomeOriginal}
+            value={editarNome}
+            onChange={(evento) => setEditarNome(evento.target.value)}
+          />
+          <input
+            type="text"
+            placeholder={emailOriginal}
+            value={editarEmail}
+            onChange={(evento) => setEditarEmail(evento.target.value)}
+          />
+          <input
+            type="text"
+            placeholder={telefoneOriginal}
+            value={editarTelefone}
+            onChange={(evento) => setEditarTelefone(evento.target.value)}
+          />
+          <div>
+            <Botao
+              onClick={() => {
+                dispatch(
+                  editar({
+                    nome: nomeOriginal,
+                    email: emailOriginal,
+                    telefone: telefoneOriginal,
+                    id
+                  })
+                )
+                setEstaEditando(false)
+              }}
+            >
+              Salvar
+            </Botao>
+            <BotaoCancelarRemover
+              onClick={() => {
+                cancelarEdicao()
+              }}
+            >
+              Cancelar
+            </BotaoCancelarRemover>
+          </div>
         </>
       ) : (
         <>
-          <BotaoEditar onClick={() => setEstaEditando(true)}>
-            Editar
-          </BotaoEditar>
-          <BotaoCancelarRemover onClick={() => dispatch(remover(id))}>
-            Excluir
-          </BotaoCancelarRemover>
+          <h3>{nomeOriginal}</h3>
+          <p>{emailOriginal}</p>
+          <p>{telefoneOriginal}</p>
+          <div>
+            <BotaoEditar onClick={() => setEstaEditando(true)}>
+              Editar
+            </BotaoEditar>
+            <BotaoCancelarRemover onClick={() => dispatch(remover(id))}>
+              Excluir
+            </BotaoCancelarRemover>
+          </div>
         </>
       )}
     </Card>
