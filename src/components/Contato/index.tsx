@@ -63,9 +63,9 @@ const Contato = ({
               onClick={() => {
                 dispatch(
                   editar({
-                    nome: nomeOriginal,
-                    email: emailOriginal,
-                    telefone: telefoneOriginal,
+                    nome: editarNome,
+                    email: editarEmail,
+                    telefone: editarTelefone,
                     id
                   })
                 )
@@ -74,11 +74,7 @@ const Contato = ({
             >
               Salvar
             </Botao>
-            <BotaoCancelarRemover
-              onClick={() => {
-                cancelarEdicao()
-              }}
-            >
+            <BotaoCancelarRemover onClick={cancelarEdicao}>
               Cancelar
             </BotaoCancelarRemover>
           </div>
