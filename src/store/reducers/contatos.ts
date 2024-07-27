@@ -9,21 +9,21 @@ const initialState: ContatosState = {
   itens: [
     {
       id: 1,
-      nome: 'Ramon',
-      email: 'ramonsilvab05@gmail.com',
-      telefone: '28992727751'
+      nome: 'Kikos Restaurante',
+      email: 'kikosrestaurante@gmail.com',
+      telefone: ' (28) 3027-6866'
     },
     {
       id: 2,
-      nome: 'Bruna',
-      email: 'brunavalims2@gmail.com',
-      telefone: '28992725559'
+      nome: 'K-Skina Lanches',
+      email: 'kskinalanches@gmail.com',
+      telefone: '(28) 3511-9159'
     },
     {
       id: 3,
-      nome: 'Norky',
-      email: 'norkyzinho@gmail.com',
-      telefone: '28992727553'
+      nome: 'Bizzoca Lanches',
+      email: 'bizokalanches@gmail.com',
+      telefone: '(28) 99926-5716'
     }
   ]
 }
