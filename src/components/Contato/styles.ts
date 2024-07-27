@@ -6,7 +6,7 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 50%;
-  background-color: #fcfcfc;
+  background-color: ${variaveis.branco};
   padding: 16px;
   border-radius: 16px;
   margin: 24px auto 24px;
@@ -14,7 +14,7 @@ export const Card = styled.div`
 
   h3,
   p {
-    background-color: #fcfcfc;
+    background-color: ${variaveis.branco};
     padding-bottom: 16px;
   }
 
@@ -24,14 +24,7 @@ export const Card = styled.div`
   }
 
   div {
-    background-color: #fcfcfc;
-  }
-
-  input {
-    margin-bottom: 8px;
-    padding: 8px;
-    font-size: 14px;
-    border-radius: 8px;
+    background-color: ${variaveis.branco};
   }
 
   @media (max-width: 567px) {

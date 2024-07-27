@@ -11,6 +11,12 @@ const EstiloGlobal = createGlobalStyle`
     background-color: #c1e2f7;
   }
 `
+export const Input = styled.input`
+  margin-bottom: 8px;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 8px;
+`
 export const Container = styled.div`
   max-width: 1024px;
   margin: 0 auto;

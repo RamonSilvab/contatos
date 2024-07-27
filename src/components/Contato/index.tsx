@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { Botao } from '../../styles'
+import { Botao, Input } from '../../styles'
 import { BotaoCancelarRemover, BotaoEditar, Card } from './styles'
 
 import { remover, editar } from '../../store/reducers/contatos'
@@ -40,19 +40,19 @@ const Contato = ({
     <Card>
       {estaEditando ? (
         <>
-          <input
+          <Input
             type="text"
             placeholder={nomeOriginal}
             value={editarNome}
             onChange={(evento) => setEditarNome(evento.target.value)}
           />
-          <input
+          <Input
             type="text"
             placeholder={emailOriginal}
             value={editarEmail}
             onChange={(evento) => setEditarEmail(evento.target.value)}
           />
-          <input
+          <Input
             type="text"
             placeholder={telefoneOriginal}
             value={editarTelefone}
